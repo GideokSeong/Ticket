@@ -10,11 +10,19 @@ build:
   #googleCloudBuild:
   #  projectId: ticketing-385100
   artifacts:
-    - image: gideok/auth
+    - image: kinznzl/auth
       context: auth
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
           - src: 'src/**/*.ts'
+            dest: .
+    - image: kinznzl/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
             dest: .

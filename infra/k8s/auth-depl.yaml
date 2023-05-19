@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: auth
-          image: gideok/auth
-          imagePullPolicy: Never
+          image: kinznzl/auth
+          #imagePullPolicy: Never
           env:
             - name: JWT_KEY
               valueFrom:

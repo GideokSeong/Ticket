@@ -1,10 +1,10 @@
-import { Publisher } from './base-publisher';
-import { TicketCreatedEvent } from './ticket-created-event';
-import { Subjects } from './subjects';
+import { Publisher } from '../../../tickets/node_modules/@gdtickets/common';
+import { TicketCreatedEvent } from '../../../tickets/node_modules/@gdtickets/common';
+import { Subjects } from '../../../tickets/node_modules/@gdtickets/common'
 
 export class TicketCreatedPublisher extends Publisher<TicketCreatedEvent> {
   
-  readonly subject = Subjects.Ticketcreated;
+  readonly subject = Subjects.TicketCreated;
   
   
 }

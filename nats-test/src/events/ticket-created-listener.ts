@@ -1,10 +1,10 @@
 import { Message } from 'node-nats-streaming';
-import { Listener } from '../../../common/src/events/base-listener';
-import { Subjects } from './subjects';
-import { TicketCreatedEvent } from './ticket-created-event';
+import { Listener } from '../../../tickets/node_modules/@gdtickets/common';
+import { Subjects } from '../../../tickets/node_modules/@gdtickets/common';
+import { TicketCreatedEvent } from '../../../tickets/node_modules/@gdtickets/common';
 
 export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
-  readonly subject = Subjects.Ticketcreated;
+  readonly subject = Subjects.TicketCreated;
   queueGroupName = 'payments-service';
   
   onMessage(data: TicketCreatedEvent['data'], msg: Message){

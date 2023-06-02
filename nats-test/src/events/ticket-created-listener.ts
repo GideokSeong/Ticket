@@ -4,15 +4,16 @@ import { Subjects } from './subjects';
 import { TicketCreatedEvent } from './ticket-created-event';
 
 export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
-  subject: Subjects.Ticketcreated = Subjects.Ticketcreated;
+  readonly subject = Subjects.Ticketcreated;
   queueGroupName = 'payments-service';
   
-  onMessage(data: any, msg: Message){
+  onMessage(data: TicketCreatedEvent['data'], msg: Message){
     console.log('Even data!',data);
 
-    console.log(data.name);
-    console.log(data.cost);
-
+    console.log(data.id);
+    console.log(data.title);
+    console.log(data.price);
+    
     msg.ack();
   }
 }
